@@ -123,6 +123,10 @@ html {
   height: 500px;
 }
 
+.md {
+  display: none;
+}
+
 /* Medium / Tablet */
 @media screen and (min-width: 480px) {
   :root {
@@ -140,10 +144,14 @@ html {
   .page-header-menu {
     display: none;
   }
+
+  .md {
+    display: block;
+  }
 }
 
 /* Large / Desktop */
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   :root {
     --logo-width: 350px;
     --content-width: 1024px;

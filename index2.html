@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style2_nested.css">
+    <!-- <link rel="shortcut icon" href="https://www.royalroad.com/icons/android-chrome-192x192.png?v=20200125" type="image/x-icon"> -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>NobleStreet</title>
@@ -13,7 +14,7 @@
 <body>
     <div class="background"></div>
     <div class="page-header-wrapper">
-        <div class="page-header-content">
+        <div class="container top">
             <div class="page-header-top">
                 <img id="logo-top" src="img/rr-logo-gold-white-small-min.png" alt="">
                 <div class="head-buttons">
@@ -35,15 +36,17 @@
                     </button>
                 </div>
             </div>
+        </div>
+        <div class="container menu">
             <div class="page-header-menu">
                 <ul>
-                    <li><a href=""><span class="material-symbols-outlined">book</span>Read <span
-                                class="material-symbols-outlined">arrow_drop_down</span></a></li>
+                    <li><a href=""><span class="material-symbols-outlined">book</span>Read
+                            <span class="material-symbols-outlined">arrow_drop_down</span></a></li>
                     <li><a href=""><span class="material-symbols-outlined">ink_pen</span>Write</a></li>
                     <li><a href=""><span class="material-symbols-outlined">forum</span>Forum</a></li>
                     <li><a href=""><span class="material-symbols-outlined">groups</span>Member List</a></li>
-                    <li><a href=""><span class="material-symbols-outlined">support</span>Support <span
-                                class="material-symbols-outlined">arrow_drop_down</span></a></li>
+                    <li><a href=""><span class="material-symbols-outlined">support</span>Support
+                            <span class="material-symbols-outlined">arrow_drop_down</span></a></li>
                     <li><a href=""><span class="material-symbols-outlined">star</span>Premium</a></li>
                 </ul>
                 <div class="search">
@@ -53,10 +56,43 @@
             </div>
         </div>
     </div>
-    <div class="page-container">
-        <div class="page-content">
+    <div class="page-body-wrapper">
+        <div class="page-body-content">
             <div class="home">
-                <div id="news"></div>
+                <div id="news">
+                    <div id="news-box">
+                        <h3>A plea & and a thank you</h3>
+                        <p class="md">We have a problem and we need your help</p>
+                        <a class="action-button" href="">Learn More</a>
+                    </div>
+                </div>
+                <div class="ad">
+                    <a class="close" href=""><span class="material-symbols-outlined">close</span>remove</a>
+                    <h3>ADVERTISEMENT</h3>
+                    <img src="img/ads/1.png" alt="An ad">
+                </div>
+                <div class="carousel-wrapper">
+                    <div class="arrow next"><span class="material-symbols-outlined">chevron_left</span></div>
+                    <div class="partner-books-carousel">
+                        <div class="partner-book-wrapper">
+                            <div class="partner-book">
+                                <div class="info">
+                                    <img class="cover" src="img/ads/partner_books/sg.png" alt="">
+                                    <div class="text">
+                                        <h4>Soul Gardian</h4>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. s omnis delectus numquam? Dignissimos ad harum consequuntur quod? Cumque ad iusto velit?</p>
+                                    </div>
+                                </div>
+                                <div class="links">
+                                    <div class="amazon"><img src="img/amazon_logo.png" alt=""></div>
+                                    <div class="audible"><img src="img/amazon_logo.png" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrow next"><span class="material-symbols-outlined">chevron_right</span></div>
+                
+                </div>
                 <div class="filler" id="partner-books">
                     <h2>Partner-books</h2>
                     <p>Lorem ipsum,</p>
@@ -68,12 +104,29 @@
                 </div>
                 <div class="filler" id="popular-this-week">
                     <h2>Popular this week</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet fuga aut, voluptas id tempore nobis possimus, ipsa hic deleniti neque harum ea. Porro inventore repellat enim officiis hic impedit a.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet fuga aut, voluptas id tempore
+                        nobis possimus, ipsa hic deleniti neque harum ea. Porro inventore repellat enim officiis hic
+                        impedit a.</p>
                 </div>
 
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const original = document.querySelector('.partner-book-wrapper');
+        
+            if (original) {
+                for (let i = 0; i < 10; i++) {
+                    const clone = original.cloneNode(true); // true = deep clone
+                    original.parentNode.appendChild(clone);
+                }
+            } else {
+                console.warn("No element with class 'partner-book-wrapper' found.");
+            }
+        });
+        </script>
+        
 </body>
 
 </html>
