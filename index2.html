@@ -104,8 +104,8 @@
                 <div class="carousel-wrapper">
                     <div class="arrow next"><span class="material-symbols-outlined">chevron_left</span></div>
                     <div class="partner-books-carousel">
-                        <div class="partner-book-wrapper">
-                            <div class="partner-book">
+                        <div class="partner-book-wrapper repeat-7">
+                            <div class="partner-book ">
                                 <div class="info">
                                     <img class="cover" src="img/ads/partner_books/sg.png" alt="">
                                     <div class="text">
@@ -123,26 +123,103 @@
                     <div class="arrow next"><span class="material-symbols-outlined">chevron_right</span></div>
                 
                 </div>
-                <div class="filler" id="partner-books">
-                    <h2>Partner-books</h2>
-                    <p>Lorem ipsum,</p>
-                </div>
-                <div class="filler" id="recommendations">
-                    <h2>Recommendations</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore quis error fugit aut molestiae
-                        nesciunt ipsam officiis nostrum eos atque.</p>
-                </div>
-                <div class="filler" id="popular-this-week">
-                    <h2>Popular this week</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet fuga aut, voluptas id tempore
-                        nobis possimus, ipsa hic deleniti neque harum ea. Porro inventore repellat enim officiis hic
-                        impedit a.</p>
-                </div>
+                <div class="list-area">
+                    <div class="latest-updates">
+                        <h4>Latest updates</h4>
+                        <hr>
+                        <div class="item-with-thumb latest-item repeat-10">
+                            <div class="thumb">
+                                <img src="img/covers/83095-one-piece-dawn-of-a-new-era.png" alt="">
+                            </div>
+                            <div class="text-info">
+                                <h5>One Piece: Dawn of new era</h5>
+                                <ul>
+                                    <li><a href="">Chapter 185</a></li>
+                                    <li><a href="">The King and Her Pyro Style</a></li>
+                                    <li><a href="">The King and Her Pyro Style</a></li>
 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rising-stars">
+                        <h4>Rising Stars</h4>
+                        <hr>
+                        <div class="item-with-thumb rising-star repeat-7">
+                            <div class="thumb"><img src="img/covers/83095-one-piece-dawn-of-a-new-era.png" alt=""></div>
+                            <div class="text-info">
+                                <h5>SystemReset: Forged in Nightmare</h5>
+                                <div class="badges">
+                                    <span class="badge">Pictues</span><span class="badge">Wooshu</span><span class="badge">Fishing</span><span class="badge">Fantasy</span><span class="badge">LitRPG</span>
+                                </div>
+                                <div class="star-and-followers">
+                                    <div class="star-rating">
+                                        <svg class="star-rating-graphic" viewBox="0 0 100 20" width="200" height="40" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient id="star-fill" x1="0" x2="1" y1="0" y2="0">
+                                                <stop offset="70%" style="stop-color: var(--star-fill-color);" />
+                                                <stop offset="70%" style="stop-color: var(--star-empty-color);"/>
+                                                </linearGradient>
+                                            </defs>
+                                            
+                                            <!-- Border layer -->
+                                            <text x="0" y="18" font-size="20" fill="none" style="stroke:var(--star-fill-color);" stroke-width="1" font-family="sans-serif">
+                                                ★★★★★
+                                            </text>
+                                            
+                                            <!-- Fill layer -->
+                                            <text x="0" y="18" font-size="20" fill="url(#star-fill)" font-family="sans-serif">
+                                                ★★★★★
+                                            </text>
+                                        </svg>
+                                    </div>
+                                    <div class="follower-count"><span class="material-symbols-outlined">groups</span>1,723 Followers</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ad">
+                        <a class="close" href=""><span class="material-symbols-outlined">close</span>remove</a>
+                        <h3>ADVERTISEMENT</h3>
+                        <img src="img/ads/1.png" alt="An ad">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <script>
+    <footer class="page-footer-wrapper">
+        <footer class="page-footer-content">
+            <div id="about">
+                <h3>About</h3>
+                <p>
+                    Royal Road® is the home of web novels and fan fictions! In our amazing community, you can find various talented individuals who write as a hobby or even professionally, artists who create art for them, and many, many readers who provide valuable feedback and encouragement.
+                </p>
+            </div>
+            <div id="affiliate">
+                <h3>Amazon Affiliate</h3>
+                <p>Royal Road® as an Amazon Associate earns from qualifying purchases.</p>
+            </div>
+            <div class="theme-and-follow">
+                <h3>Theme select</h3>
+                <select name="" id="">
+                    <option value="dark">dark</option>
+                </select>
+                <h3>Follow us</h3>
+                <img src="img/follow.png" alt="">
+            </div>
+            <div class="help-contact-advertising">
+                <h3>Need some help?</h3>
+                <p><a href="">Crete a suport ticket</a></p>
+                <h3>Contact</h3>
+                <p><a href="">Contact us by email</a></p>
+                <h3>Advertising</h3>
+                <p><a href="">Ads for authors</a></p>
+                <p><a href="">Programmatic advertising</a></p>
+            </div>
+        </footer>
+    </footer>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             const original = document.querySelector('.partner-book-wrapper');
         
@@ -155,7 +232,22 @@
                 console.warn("No element with class 'partner-book-wrapper' found.");
             }
         });
-        </script>
+    </script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const repeatElements = document.querySelectorAll('[class*="repeat-"]');
+
+            repeatElements.forEach(original => {
+                const match = [...original.classList].find(cls => cls.startsWith("repeat-"));
+                const count = match ? parseInt(match.replace("repeat-", ""), 10) : 0;
+
+                for (let i = 1; i < count; i++) { // start at 1 since original is already there
+                    const clone = original.cloneNode(true);
+                    original.parentNode.appendChild(clone);
+                }
+            });
+        });
+    </script>
         
 </body>
 
