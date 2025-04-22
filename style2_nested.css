@@ -320,6 +320,15 @@ a, button {
 }
 
 .rising-star {
+    .badges {
+        overflow-y:hidden;  
+        /* hide the scrollbar*/
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        &::-webkit-scrollbar {
+          display: none; /* Chrome, Safari, Opera */
+        }
+    }
     .badge {
         background-color: rgb(50, 50, 50);
         border-radius: 1rem;
@@ -332,6 +341,7 @@ a, button {
         height: 1.25rem;
         width: 5rem;
     }
+    
     .star-and-followers {
         display: flex;
         justify-content: space-between;
@@ -346,6 +356,8 @@ a, button {
         display: flex;
         flex-direction: column;
         gap:0.75rem;
+        flex-shrink: 1;
+        min-width: 0;
     }
 }
 
