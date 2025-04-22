@@ -21,8 +21,12 @@ a, button {
 
     --background-surface: rgb(24, 24, 24);   /* Outer background (page-level) */
     --background-box: rgba(0, 0, 0, 0.3);     /* Inner background (boxes/cards) */
-    --background-highlight: rgba(255, 255, 255, 0.2);  /* Inner background (boxes/cards) */
-    
+    --background-highlight: #55616f;  /* Inner background (boxes/cards) */
+    --background-highlight-small: #1d1d1d;
+    --background-header: #181818;
+    --background-subheader: #181818;
+    --background-darker-gray: #38414c;
+    --suportColor: #6fa7d7;
     --text-color: rgb(188, 194, 203);
     --text-color-contrast-against-highlight: black;
 }
@@ -56,7 +60,7 @@ a, button {
     width: var(--logo-width);
 }
 .page-header-top {
-    background-color: black;
+    background-color: var(--background-header);
     display: flex;
     justify-content: space-between;
     padding: 1rem;
@@ -76,10 +80,12 @@ a, button {
 }
 
 .page-header-menu {
-    background-color: var(--background-surface);
+    background-color: var(--background-subheader);
     display: none;
     align-items: center;
     justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
     ul {
         display: flex;
         margin: 0;
@@ -88,7 +94,8 @@ a, button {
     li {
         list-style-type: none;
         a {
-            padding: 15px 15px;
+            font-family: Open Sans, sans-serif;
+            padding: 16px 18px 15px;
             display: flex;
             align-items: center;
             text-decoration: none;
@@ -96,15 +103,114 @@ a, button {
         }
         a:hover {
             background-color: var(--background-highlight);
-            color: var(--text-color-contrast-against-highlight);
         }
     }
     .search {
+        display: flex;
+        justify-content: center;
+        background-color: var(--background-darker-gray);
         input, button {
-            height: 2rem;
+        height: 38px;
+        
+        }
+        input{
+            padding-left: 20px;
+            font-size: 13px;
+            width: 110px;
+            font-family: Open Sans, sans-serif;
+            border: 0;
+            color: white;
+            background-color: rgba(0, 0, 0, 0);
+            &::placeholder{
+                color: white;
+            }
+            &:focus{
+                outline: none;
+            }
+        }
+        .search{
+            padding-top: 7px;
+            border: 0;
+            color: #54697d;
+            background-color: rgba(0, 0, 0, 0);
+            display: flex;
+
+        }
+        .advanced-search{
+            border: 0;
+            color: white;
+            background-color: rgb(51, 122, 183);
+            &:hover{
+                background-color: rgb(40, 96, 144);
+            }
         }
     }
 }
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  
+    .dropdown-button {
+      padding: 16px 18px 15px;
+      font-family: Open Sans, sans-serif;
+      font-size: 14px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font: inherit;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+  
+      &:hover {
+        background-color: var(--background-highlight);
+        /* color: var(--text-color-contrast-against-highlight); */
+      }
+    }
+  
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--background-subheader);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      min-width: 160px;
+      z-index: 1000;
+  
+      li {
+        position: relative;
+
+        a {
+          padding: 10px 12px;
+          font-family: Open Sans, sans-serif;
+          font-size: 14px;
+          gap: 0.25rem;
+          display: flex;
+          justify-items: center;
+          text-decoration: none;
+          color: var(--text-color);
+          white-space: nowrap;
+          span{
+            color: var(--suportColor);
+          }
+          &:hover {
+            background-color: var(--background-highlight-small);
+          }
+        }
+      }
+    }
+    
+    &:hover > .dropdown-menu {
+        display: block;
+    }
+}
+
+  
 
 /* site background image */
 .background {

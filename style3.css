@@ -123,6 +123,7 @@ html {
   }
   .dropdown:hover .dropdown-menu li{
     display: block;
+    background-color: gray;
 }
   .dropdown-menu li a {
     text-decoration: none;
