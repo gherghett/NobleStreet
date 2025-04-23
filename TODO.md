@@ -6,6 +6,7 @@
 - [ ] Styla text och länkar i footern
 - [ ] Styla select-dropdown i footern
 - [ ] Lägga till en `<h2>` för partner books
+- [ ] lägga till röda buttons där applicerbart
 
 ### Extra (Overkill kanske)
 - [ ] Få hamburgermenyn att fungera
