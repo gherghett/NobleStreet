@@ -220,6 +220,9 @@
         </footer>
     </footer>
     <script>
+        // En funktion för att hitta alla elemtent med klassen repeat-x och generera flera av dem
+        // en div med class="repeat-10" kommer dyka upp 10 gånger i browsern
+        // slipper man ändra htmlen på flera ställen i utvecklingsstadiet
         document.addEventListener("DOMContentLoaded", function () {
             const repeatElements = document.querySelectorAll('[class*="repeat-"]');
 
