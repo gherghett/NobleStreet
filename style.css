@@ -347,6 +347,7 @@ a.action-button {
     img.cover {
         object-fit: contain;
         max-height: 100%;
+        /* width: 70px; */
         flex-shrink: 1s;
     }
     .info {
@@ -514,6 +515,11 @@ a.action-button {
         display: none;
     }
 
+    /* hacky fix to fit text in .partner-book */
+    .cover {
+        width: 70px;
+    }
+
     /*partners-books carousel */
     .partner-books-carousel .partner-book-wrapper {
         flex: 0 0 50%;
@@ -544,6 +550,12 @@ a.action-button {
             margin-bottom: 1rem;
         }
     }
+
+    /* hacky fix to fit text in .partner-book */
+    .cover {
+        width: unset;
+    }
+    
 }
 
 .filler { /* class just for testing when body is higher than screen */
@@ -574,7 +586,9 @@ a.action-button {
     /*partners-books carousel */
     .partner-books-carousel .partner-book-wrapper {
         flex: 0 0 33.3333%;
+
     }
+
 
     .page-footer-content {
         grid-template-columns: 1fr 1fr 1fr 1fr;
