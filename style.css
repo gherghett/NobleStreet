@@ -566,10 +566,10 @@ a.action-button {
     } */
     /* .page-header-content, .page-body-content, .page-footer-content {
         align-content: center;
-    }
-    .page-header-menu {
+    }*/
+     .page-header-menu {
         display: flex;
-    } */
+    } 
 
     /*partners-books carousel */
     .partner-books-carousel .partner-book-wrapper {
@@ -595,9 +595,9 @@ a.action-button {
     }
     .page-header-content, .page-content {
         align-content: center;
-    }
+        } */
     .page-header-menu {
         display: flex;
-    } */
+    }
 }  
 
