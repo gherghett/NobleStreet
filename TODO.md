@@ -1,7 +1,7 @@
 ## Att göra
 
 ### Funktionalitet
-- [ ] Ta bort scrollbaren (gömma den) på x-axeln i partner books
+- [x] Ta bort scrollbaren (gömma den) på x-axeln i partner books
 - [ ] Styla linjer, färger och text i `.list-area` med variabler
 - [ ] Styla text och länkar i footern
 - [ ] Styla select-dropdown i footern
