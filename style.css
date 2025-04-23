@@ -1,3 +1,5 @@
+/*Denna är gjord mobile first*/
+
 *,
 *::before,
 *::after {
@@ -37,27 +39,29 @@ a, button {
     --tag-background: rgb(36, 36, 36)
 }
 
-/*mobile first */
+/*global */
+
+/*red button seen in multiple places */
+a.action-button {
+    padding: 1rem;
+    background-color: brown;
+}
+
+/* tailwind-aktig utilityklass, blev i slutändan inte använd så mkt */
+.md {
+    display: none;
+}
+
+
+.container {
+    width: var(--content-width); 
+    margin-left:auto;
+    margin-right:auto;
+}
 
 /* header -------------------------*/
 .page-header-wrapper {
-    display: flex;
-    flex-direction: column;
-    > .container {
-        display: flex;
-        justify-content: space-around;
-
-        > * {
-            width: var(--content-width);
-        }
-        &.top {
-            background-color: black;
-        }
-        &.menu {
-            background-color: var(--background-surface);
-        }
-    }
-
+    background-color: var(--background-surface);
 }
 #hamburger {
     display: block;
@@ -66,11 +70,10 @@ a, button {
     width: var(--logo-width);
 }
 .page-header-top {
-    background-color: var(--background-header);
+    /* background-color: var(--background-header); behövs inte för hela page-header-wrapper har en bg-color*/
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    width: var(--content-width);
     .head-buttons {
         display: flex;
         max-width: 100%;
@@ -81,7 +84,7 @@ a, button {
         align-items: center;
         background: none;
         border: none;
-        margin: 0rem 0.rem;
+        margin: 0rem 0rem;
     }
 }
 
@@ -104,7 +107,6 @@ a, button {
             display: flex;
             align-items: center;
             text-decoration: none;
-
         }
         a:hover {
             background-color: var(--background-highlight);
@@ -163,7 +165,7 @@ a, button {
       background: none;
       border: none;
       cursor: pointer;
-      font: inherit;
+      font: inherit; /*  denna kör över de övre font declarations */
       display: flex;
       align-items: center;
       text-decoration: none;
@@ -229,16 +231,21 @@ a, button {
 }
 
 /* body --------------------------------------*/
-.page-container {
-}
 
+/*allt i main delen av sidan är i denna*/
 .page-body-content {
-    background-color: rgb(24, 24, 24);
+    background-color: var(--background-surface);
     padding: 1rem;
-    width: var(--content-width);
     flex-direction: row;
 }
 
+/* andvänds runt alla områden som ad, rising-stars, latest-updaes */
+.content-box {
+    background-color: var(--background-box);
+    border: 1px solid var(--background-highlight);
+}
+
+/* .page-body-content > direkt barn */
 .home {
     /* background-color: chocolate; */
     display: flex;
@@ -246,6 +253,7 @@ a, button {
     gap: 1rem;
 }
 
+/* .page-body-content > direkt barn */
 #news {
     background-image: url(img/plea.png);
     background-position: right;
@@ -255,7 +263,7 @@ a, button {
     #news-box {
         background-color: rgba(0,0,0,0.5);
         width: 50%;
-        min-width: 480px;
+        min-width: min(100%, 480px);
         padding: 2rem;
         p {
             margin-bottom: 3rem;
@@ -310,6 +318,14 @@ a, button {
     font-size: small;
     height: 15rem;
     overflow-x: scroll;
+
+    /* overflow-x:hidden; this would make it unscrollable  */
+    /* hide the scrollbar but keep it scrollable*/
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
 
     .partner-book-wrapper {
         /* this percentage changes in the media queries */
@@ -644,23 +660,12 @@ a, button {
     }
 }
 
-a.action-button {
-    padding: 1rem;
-    background-color: brown;
-}
-
-
-.md {
-    display: none;
-}
-
 /*-------------------------FOOTER------------*/
 .page-footer-wrapper{
     background-color: var(--background-surface);
 }
 .page-footer-content{
     padding: 1rem;
-    width: var(--content-width);
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr;
@@ -746,21 +751,22 @@ a.action-button {
 @media screen and (min-width: 1024px) {
     :root {
         --logo-width: 350px;
-        --content-width: 1024px;
+        /* Jag lade till lite minus här för jag märkte att scrollbaren gör att allt inte får plats på bredden */
+        --content-width: calc(1024px - 50px);
     }
     #hamburger {
         display: none;
     }
-    .page-header-wrapper, .page-body-wrapper, .page-footer-wrapper {
+    /* .page-header-wrapper, .page-body-wrapper, .page-footer-wrapper {
         display: flex;
         justify-content: space-around;
-    }
-    .page-header-content, .page-body-content, .page-footer-content {
+    } */
+    /* .page-header-content, .page-body-content, .page-footer-content {
         align-content: center;
-    }
-    .page-header-menu {
+    }*/
+     .page-header-menu {
         display: flex;
-    }
+    } 
 
     /*partners-books carousel */
     .partner-books-carousel .partner-book-wrapper {
@@ -774,18 +780,19 @@ a.action-button {
 
 @media screen and (min-width: 1440px) {
     :root {
-      --content-width: 1280px;
+        /* Jag lade till lite minus här för jag märkte att scrollbaren gör att allt inte får plats på bredden */
+      --content-width: calc(1280px - 50px);
     }
     #hamburger {
         display: none;
     }
-    .page-header-wrapper, .page-container {
+    /* .page-header-wrapper, .page-container {
         display: flex;
         justify-content: space-around;
     }
     .page-header-content, .page-content {
         align-content: center;
-    }
+        } */
     .page-header-menu {
         display: flex;
     }
