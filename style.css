@@ -104,8 +104,10 @@ a.action-button {
         list-style-type: none;
         a {
             font-family: Open Sans, sans-serif;
+            font-size: small;
             padding: 16px 18px 15px;
             display: flex;
+            gap: 0.5rem;
             align-items: center;
             text-decoration: none;
         }
@@ -160,17 +162,6 @@ a.action-button {
     display: inline-block;
   
     .dropdown-button {
-      padding: 16px 18px 15px;
-      font-family: Open Sans, sans-serif;
-      font-size: 14px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font: inherit; /*  denna kör över de övre font declarations */
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-  
       &:hover {
         background-color: var(--background-highlight);
         /* color: var(--text-color-contrast-against-highlight); */
@@ -183,34 +174,9 @@ a.action-button {
       top: 100%;
       left: 0;
       background-color: var(--background-subheader);
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       min-width: 160px;
       z-index: 1000;
   
-      li {
-        position: relative;
-
-        a {
-          padding: 10px 12px;
-          font-family: Open Sans, sans-serif;
-          font-size: 14px;
-          gap: 0.25rem;
-          display: flex;
-          justify-items: center;
-          text-decoration: none;
-          color: var(--text-color);
-          white-space: nowrap;
-          span{
-            color: var(--suportColor);
-          }
-          &:hover {
-            background-color: var(--background-highlight-small);
-          }
-        }
-      }
     }
     
     &:hover > .dropdown-menu {
